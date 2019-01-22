@@ -27,8 +27,12 @@ headers = [{"Content-type": "application/x-www-form-urlencoded",
 			'Accept': 'text/html, */*; q=0.8',
 			'Connection':'keep-alive'}]
 
-while True: 
+count = 0
 
+while True: 
+	
+	count = count + 1
+	
 	password_length = random.randint(12,20)
 	password = ''.join(random.sample("abcdefghijklmnopqrstuvwxyz!@#$%^&*()",password_length))
 	username_length = random.randint(1,20)
@@ -52,4 +56,6 @@ while True:
 	print(header_index)
 	print(req)
 	print(response)
+	print("====post %d times===="%count)
+	print("====response page content====")
 	print(the_page[:100])
